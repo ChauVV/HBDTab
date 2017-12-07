@@ -27,7 +27,7 @@ const Tabs = () => {
       <Tab path="/mainTabbar/tokensView" label="Tokens" icon="chart-bar" />
       <Tab path="/mainTabbar/exchangesView" label="Exchanges" icon="chart-bar" />
       <Tab path="/mainTabbar/settingsView" label="Settings" icon="chart-bar" />
-      <Button>Next</Button>
+      <Button className="btn btn-primary">Next</Button>
       <Button>Back</Button>
     </nav>
   );

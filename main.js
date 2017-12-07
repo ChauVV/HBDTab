@@ -5,6 +5,11 @@ const {app, BrowserWindow, Menu} = require('electron');
 const path = require('path')
 const url = require('url')
 
+const SCREEN_WIDTH = 1366
+const SCREEN_HEIGHT = 768
+const SCREEN_MIN_WIDTH = 1039
+const SCREEN_MIN_HEIGHT = 710
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
@@ -18,7 +23,11 @@ if ( process.defaultApp || /[\\/]electron-prebuilt[\\/]/.test(process.execPath) 
 function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 1024, height: 768, show: false
+    width: SCREEN_WIDTH, 
+    minWidth: SCREEN_MIN_WIDTH,
+    height: SCREEN_HEIGHT, 
+    minHeight: SCREEN_MIN_HEIGHT,
+    show: false
   });
 
   // Setup menu, you should change this
