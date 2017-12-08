@@ -1,23 +1,20 @@
 // @flow
-import React, { Component } from 'react';
-import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'connected-react-router';
-// import { ConnectedRouter } from 'react-router-redux';
-import { store, history } from './Backend/Redux/configureStore';
+import React from 'react'
+import { Provider } from 'react-redux'
+import { ConnectedRouter } from 'connected-react-router'
+import { store, history } from './Backend/Redux/configureStore'
 import { checkLocalStoreToRedux } from './Backend/Redux/reducerConfig'
 import { Switch, Route } from 'react-router'
 
-import SplashScreen from './Frontend/initsScreen/SplashScreen';
-import LanguageScreen from './Frontend/initsScreen/LanguageScreen';
-import MainTabbar from './Frontend/MainTabbarScreen'
-
-import EthereumScreen from './Frontend/MainTabbarScreen/EthereumScreen/EthereumScreen'
-import ExchangesScreen from './Frontend/MainTabbarScreen/ExchangesScreen/ExchangesScreen'
-import SettingsScreen from './Frontend/MainTabbarScreen/SettingsScreen/SettingsScreen'
-import TokensScreen from './Frontend/MainTabbarScreen/TokensScreen/TokensScreen'
+import SplashScreen from '~/initsScreen/SplashScreen'
+import LanguageScreen from '~/initsScreen/LanguageScreen'
+import NewWalletScreen from '~/initsScreen/NewWalletScreen'
+import RestoreScreen from '~/initsScreen/RestoreScreen'
+import MainTabbar from '~/MainTabbarScreen'
 
 import * as actions from './Backend/Redux/actions/globleActions'
 import { KEYSTORE } from './Utils/globalConstants'
+import '../vendor/photon/css/globalStyles.css'
 
 const App = () => {
   checkLocalStoreToRedux(store, KEYSTORE.COUNTER, actions.setCounter, 0)
@@ -27,18 +24,19 @@ const App = () => {
         <div><AppRouter/></div>
       </ConnectedRouter>
     </Provider>
-  );
+  )
 }
 
 const AppRouter = () => {
   return (
     <Switch>
-      <Route exact path="/" component={SplashScreen} />
-      <Route path="/languageScreen/:name" component={LanguageScreen} />
+      <Route exact path="/" component={SplashScreen}/>
+      <Route path="/languageScreen" component={LanguageScreen}/>
+      <Route path="/newWalletScreen" component={NewWalletScreen}/>
+      <Route path="/restoreScreen" component={RestoreScreen}/>
       <Route path="/mainTabbar" component={MainTabbar}/>
     </Switch>
-  );
+  )
 }
 
-export default App;
-
+export default App

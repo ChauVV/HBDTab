@@ -1,20 +1,20 @@
 import React from 'react'
 
 export default class EthereumScreen extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     console.log('EthereumScreen constructor')
   }
-  componentWillMount() {
+  componentWillMount () {
     console.log('EthereumScreen componentWillMount')
   }
-  render() {
+  render () {
     console.log('EthereumScreen render')
     return (
       <div>EthereumScreen</div>
     )
   }
-  componentDidMount() {
+  componentDidMount () {
     console.log('EthereumScreen componentDidMount')
   }
 }

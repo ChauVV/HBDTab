@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default class SettingPinCodeScreen extends React.Component {
-  render() {
+  render () {
     return (
       <div>SettingPinCodeScreen</div>
     )

@@ -1,20 +1,20 @@
 import React from 'react'
 
 export default class ExchangesScreen extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     console.log('ExchangesScreen constructor')
   }
-  componentWillMount() {
+  componentWillMount () {
     console.log('ExchangesScreen componentWillMount')
   }
-  render() {
+  render () {
     console.log('ExchangesScreen render')
     return (
       <div>ExchangesScreen</div>
     )
   }
-  componentDidMount() {
+  componentDidMount () {
     console.log('ExchangesScreen componentDidMount')
   }
 }

@@ -1,21 +1,20 @@
 import React from 'react'
 
 export default class TokensScreen extends React.Component {
-
-  constructor(props) {
+  constructor (props) {
     super(props)
     console.log('TokensScreen constructor')
   }
-  componentWillMount() {
+  componentWillMount () {
     console.log('TokensScreen componentWillMount')
   }
-  render() {
+  render () {
     console.log('TokensScreen render')
     return (
       <div>TokensScreen</div>
     )
   }
-  componentDidMount() {
+  componentDidMount () {
     console.log('TokensScreen componentDidMount')
   }
 }

@@ -1,35 +1,33 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import { ConnectedRouter } from 'connected-react-router'
-import { Switch, Route, Router } from 'react-router'
+import { Switch, Route } from 'react-router'
 
 import SettingPinCodeScreen from './SettingPinCodeScreen/SettingPinCodeScreen'
 import WalletSettingsScreen from './WalletSettingsScreen/WalletSettingsScreen'
 
 export default class SettingsScreen extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     console.log('SettingsScreen constructor')
   }
-  componentWillMount() {
+  componentWillMount () {
     console.log('SettingsScreen componentWillMount')
   }
-  render() {
+  render () {
     console.log('SettingsScreen render')
     return (
-      
+
       <div className="window">
-      <div className="window-content">
-        <div className="pane-group">
-          <div className="pane-sm sidebar"><Tabs/></div>
-          <div className="pane padded"><AppRouter/></div>
+        <div className="window-content">
+          <div className="pane-group">
+            <div className="pane-sm sidebar"><Tabs/></div>
+            <div className="pane padded"><AppRouter/></div>
+          </div>
         </div>
       </div>
-    </div>
     )
   }
-  componentDidMount() {
+  componentDidMount () {
     this.props.history.push({ pathname: '/mainTabbar/settingsView/walletSettings' })
   }
 }
@@ -37,7 +35,7 @@ export default class SettingsScreen extends Component {
 const Tab = (props) => {
   return (
     <NavLink to={props.path} className="nav-group-item ">
-      <span className={"icon icon-" + props.icon}></span>
+      <span className={'icon icon-' + props.icon}></span>
       {props.label}
     </NavLink>
   )
@@ -50,14 +48,14 @@ const Tabs = () => {
       <Tab path="/mainTabbar/settingsView/walletSettings" label="Wallet Settings"/>
       <Tab path="/mainTabbar/settingsView/settingPinCode" label="Setting PIN Code" />
     </nav>
-  );
+  )
 }
 
 const AppRouter = () => {
   return (
-        <Switch>
-          <Route path="/mainTabbar/settingsView/walletSettings" component={WalletSettingsScreen} />
-          <Route path="/mainTabbar/settingsView/settingPinCode" component={SettingPinCodeScreen} />
-        </Switch>
-  );
+    <Switch>
+      <Route path="/mainTabbar/settingsView/walletSettings" component={WalletSettingsScreen} />
+      <Route path="/mainTabbar/settingsView/settingPinCode" component={SettingPinCodeScreen} />
+    </Switch>
+  )
 }

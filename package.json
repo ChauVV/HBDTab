@@ -1,13 +1,9 @@
 {
-  "name": "enhanced-electron-react-boilerplate",
-  "version": "0.6.0",
-  "description": "Modern and somewhat opinionated react+electron+webpack boilerplate",
-  "author": "Phillip Barbiero",
-  "homepage": "https://github.com/pbarbiero/enhanced-electron-react-boilerplate",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pbarbiero/enhanced-electron-react-boilerplate.git"
-  },
+  "name": "hb-wallet",
+  "version": "1.0.0",
+  "description": "hb-wallet desktop app",
+  "author": "Bacoor",
+  "homepage": "https://bacoor-vietnam.co",
   "license": "MIT",
   "main": "main.js",
   "scripts": {
@@ -15,9 +11,14 @@
     "prod": "webpack --progress --config webpack.build.config.js && electron --noDevServer .",
     "build": "webpack --progress --config webpack.build.config.js",
     "package": "webpack --config webpack.build.config.js",
-    "postpackage": "electron-packager ./ --out=./builds"
+    "postpackage": "electron-packager ./ --out=./builds",
+    "postinstall": "electron-rebuild",
+    "lint:js": "npm run lint:eslint -- . ",
+    "lint": "npm run lint:js",
+    "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts --ignore-pattern generated.*"
   },
   "devDependencies": {
+    "babel-eslint": "8.0.0",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.23.0",
@@ -43,12 +44,30 @@
     "redux": "^3.6.0",
     "style-loader": "^0.19.0",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-server": "^2.4.5",
+    "eslint-config-standard": "10.2.1",
+    "eslint-plugin-flowtype-errors": "3.3.0",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-node": "5.2.0",
+    "eslint-plugin-promise": "3.5.0",
+    "eslint-plugin-react": "7.1.0",
+    "eslint-plugin-standard": "3.0.1",
+    "flow-bin": "0.55.0"
   },
   "dependencies": {
+    "babel-plugin-root-import": "^5.1.0",
+    "babel-plugin-transform-remove-console": "^6.8.5",
+    "bip39": "^2.4.0",
+    "electron-rebuild": "^1.6.0",
+    "eslint": "4.10.0",
+    "ethereumjs-tx": "^1.3.3",
+    "ethereumjs-wallet": "^0.6.0",
     "react-bootstrap": "^0.31.5",
     "react-router-redux": "^4.0.8",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "scrypt": "^6.0.3",
+    "scrypt-js": "^2.0.3",
+    "scrypt.js": "^0.2.0"
   }
 }

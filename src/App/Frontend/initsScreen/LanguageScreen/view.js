@@ -1,17 +1,20 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap'
+import './styles.css'
 
 export default class LanguageScreen extends Component {
-    render() {
-        const { name } = this.props.match.params
-        console.log('LanguageScreen', this.props.history)
-        return(
-            <div>
-                <h1>HEY {name}</h1>
-                <h2>{this.props.counter}</h2>
-                <Link to="/">to Home</Link>
-                <Link to="/mainTabbar">to MainTabbar</Link>
-            </div>
-        )
-    }
+  render () {
+    return (
+      <div className="window">
+        <div className="window-content">
+          <div className="group-Buttons">
+            <Button className="btn-Inits-Screen btn-Inits-Size" onClick={() => this.props.gotoNewWalletScreen(this)}>English</Button>
+            <Button className="btn-Inits-Screen margin-35 btn-Inits-Size" onClick={() => this.props.gotoNewWalletScreen(this)}>日本語</Button>
+            <Button className="btn-Inits-Screen btn-Inits-Size" onClick={() => this.props.gotoNewWalletScreen(this)}>中文</Button>
+          </div>
+          <div className="txt-version">HB Wallet for Desktop ver 1.0.0 </div>
+        </div>
+      </div>
+    )
+  }
 }

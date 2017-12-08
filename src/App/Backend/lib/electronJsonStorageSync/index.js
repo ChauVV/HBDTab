@@ -1,3 +1,3 @@
 import * as store from './storage'
 
-export default store;
+export default store
